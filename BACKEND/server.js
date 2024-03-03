@@ -381,7 +381,7 @@ app.get("/searchuploads", async (req, res) => {
     console.log("Data from the database:", data);
     const responseData = {
       data: data,
-      imagePaths: imagePaths
+      // imagePaths: imagePaths
     };
     res.json(responseData);
   } catch (error) {
