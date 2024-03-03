@@ -27,7 +27,7 @@ const Udata = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://toh-seven.vercel.app//searchuploads"
+        "https://toh-hmcg.onrender.com/searchuploads"
       );
       console.log(response.data)
 
@@ -53,13 +53,13 @@ const Udata = () => {
   }, []);
 
   const showImage = (imageName) => {
-    setSelectedImage(`https://toh-seven.vercel.app//getimage/${imageName}`);
+    setSelectedImage(`https://toh-hmcg.onrender.com/getimage/${imageName}`);
   };
 
   const handleViewClick = (row) => {
     const imageName = row.original.imageName;
     showImage(imageName);
-    setSelectedImageModal(`https://toh-seven.vercel.app//getimage/${imageName}`);
+    setSelectedImageModal(`https://toh-hmcg.onrender.com/getimage/${imageName}`);
     setShowModal(true);
   };
 
