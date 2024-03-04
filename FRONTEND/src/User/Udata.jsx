@@ -506,7 +506,7 @@ const Udata = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/Dtable?registrationNumber=${registrationNumber}`
+        `https://toh-hmcg.onrender.com/Dtable?registrationNumber=${registrationNumber}`
       );
 
       const firstTireReport = response.data.data[0];
@@ -531,13 +531,13 @@ const Udata = () => {
   }, [registrationNumber]);
 
   const showImage = (imageName) => {
-    setSelectedImage(`http://localhost:8000/getimage/${imageName}`);
+    setSelectedImage(`https://toh-hmcg.onrender.com/getimage/${imageName}`);
   };
 
   const handleViewClick = (row) => {
     const imageName = row.original.imageName;
     showImage(imageName);
-    setSelectedImageModal(`http://localhost:8000/getimage/${imageName}`);
+    setSelectedImageModal(`https://toh-hmcg.onrender.com/getimage/${imageName}`);
     setShowModal(true);
   };
 
