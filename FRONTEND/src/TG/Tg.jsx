@@ -123,7 +123,7 @@ const Tg = () => {
     console.log("Registration Number:", Rn);
     try {
       const response = await axios.post(
-        "http://localhost:8000/label",
+        "https://toh-hmcg.onrender.com/label",
         formData,
         {
           headers: {
