@@ -26,28 +26,21 @@ const Udata = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://toh-hmcg.onrender.com/searchuploads"
-      );
-      console.log(response.data)
-
-      // const firstTireReport = response.data.data[0];
-      setReports(response.data);
-
-      // if (firstTireReport) {
-      //   // setTireReport([firstTireReport]);
-      //   setReports(response.data);
-      //   console.log(reports)
-      //   // setRno(firstTireReport.regisNo);
-      //   // setPno(firstTireReport.phoneNo);
-      // }
+      const response = await axios.get("http://localhost:8000/searchuploads");
+      console.log(response.data.data);
+  
+      if (Array.isArray(response.data.data)) {
+        setReports(response.data.data);
+      } else {
+        console.error('Data is not an array:', response.data);
+      }
     } catch (error) {
       console.error(error);
     } finally {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     fetchData(); // Fetch data when component mounts
   }, []);
